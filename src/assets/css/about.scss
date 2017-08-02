@@ -1,0 +1,300 @@
+@import "global";
+@import "banner_sgly";
+//@import "scrollvnav";
+
+@import "header";
+@import "footer";
+
+/*面包屑*/
+.crumb {
+  @include center($contWidth);
+  position: relative;
+  line-height: 38px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+  border-left: #000000 4px solid;
+  .title {
+    margin-left: 10px;
+    font-family: "microsoft yahei";
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .line {
+    @include line($contWidth - 250px,1px,#ccc);
+  }
+  .location{
+    position: absolute;
+    right:0;
+    &,a,a:hover{
+      color:#ABA8A8;
+      text-decoration: none;
+    }
+  }
+}
+
+/*文章 s*/
+.arcticle {
+  width: $contWidth;
+  margin: 20px auto;
+  font-family: microsoft yahei, "宋体", arial;
+  .title {
+    font-size: 39px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .content {
+    //width:$contWidth/6*4-30px;
+    //float: left;
+    text-align: left;
+    p{
+      text-align:left;
+    }
+    line-height: 23px;
+  }
+  /*右侧面板 s*/
+  .right {
+    display: none;
+    float: right;
+    margin-right: 138px;
+    .panel {
+      width: $contWidth/5*1-20px;
+      background: #F9F9F9;
+      border: #E2E2E2 1px solid;
+      -webkit-border-radius: 3px 3px 2px 2px;
+      -moz-border-radius: 3px 3px 2px 2px;
+      border-radius: 3px 3px 2px 2px;
+      border-left: #2aa5ea 2px solid;
+      text-align: left;
+      margin-bottom: 10px;
+      .title {
+        font-size: 15px;
+        text-align: left;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 5px;
+        text-indent: 8px;
+      }
+      ul {
+        margin-left: 32px;
+        li {
+          list-style-type: decimal;
+          margin: 8px auto;
+        }
+      }
+    }
+  }
+  /*右侧面板 e*/
+}
+
+/*文章 e*/
+
+@import "inc_vnav";
+
+/*坚向导航 e*/
+
+@mixin title() {
+  .title-head {
+    position: relative;
+    padding-top: 30px;
+    .line {
+      position: absolute;
+      height: 0;
+      border-top: #ececec 1px solid;
+      width: $contWidth/2-118px;
+      top: 50%;
+      &.l {
+        left: 0;
+      }
+      &.r {
+        right: 0;
+      }
+    }
+    .text {
+      text-align: center;
+      width: 180px;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/*游戏列表 s*/
+.game-list {
+  display: none;
+  width: $contWidth;
+  margin: 50px auto;
+  @include title();
+  .content {
+    margin-top: 180px;
+    *margin-top:0px;
+    *padding-top:180px;
+    ul {
+      li {
+        float: left;
+        &.item {
+          width: $contWidth/3-100px;
+          padding: 50px 33px 30px 33px;
+          background: #f9fafc;
+          border: #ececec 1px solid;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          .title {
+            font-family: microsoft yahei, "宋体", arial;
+            font-size: 39px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 15px;
+          }
+          .logo {
+            width: 196px;
+            margin: -150px auto auto auto;
+            img {
+              width: 100%;
+            }
+          }
+          .desc {
+            height: 110px;
+            color:#7f7d7d;
+            overflow: hidden;
+            line-height:18px;
+            text-align: left;
+          }
+        }
+        &.blank {
+          width: 45px;
+        }
+        .btn {
+          padding: 16px 36px;
+          background: #ffb400;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          display: block;
+          width: 80px;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+/*游戏列表 e*/
+
+/*活动列表 s*/
+.activity-bg {
+  display: none;
+  background: #eff4f7;
+  .activity-list {
+    width: $contWidth;
+    margin: 80px auto;
+    @include title();
+    .content {
+      padding-bottom: 2px;
+      margin-top: 50px;
+      ul {
+        li {
+          &.item {
+            height: 180px;
+            overflow: hidden;
+            margin-bottom: 13px;
+            .title {
+              text-align: left;
+              padding-left: 20px;
+              overflow: hidden;
+              font-family: microsoft yahei, "宋体", arial;
+              font-weight: bold;
+              font-size: 18px;
+              &,a,a:hover{
+                color:#7f7d7d;
+              }
+            }
+            .thumb {
+              float: left;
+              width: $contWidth/2;
+              img {
+                width: 100%;
+              }
+            }
+            .desc {
+              text-align: left;
+              padding-left: 20px;
+              height: 155px;
+              color: #999;
+              overflow: hidden;
+              color: #7f7d7d;
+              line-height: 23px;
+              font-size: 13px;
+            }
+          }
+          &.blank {
+            width: 45px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*活动列表 e*/
+
+/*新闻列表 s*/
+$newsListItemWidth: $contWidth/4-10px;
+.news-list {
+  display: none;
+  width: $contWidth;
+  margin: 50px auto;
+  text-align: left;
+  @include title();
+  .content {
+    width: ($newsListItemWidth*4+10*3) px;
+    margin: 80px auto auto auto;
+    ul {
+      li {
+        float: left;
+        &.item {
+          width: $newsListItemWidth;
+          .thumb {
+            width: $newsListItemWidth;
+            img {
+              width: 100%;
+            }
+          }
+          .con {
+            padding: 5px;
+            ul {
+              margin-left: 18px;
+            }
+            .cat {
+              font-family: microsoft yahei, "宋体", arial;
+              font-size: 18px;
+              font-weight: bold;
+              margin-top: 15px;
+              margin-bottom: 15px;
+              color: #7f7d7d;
+            }
+            .title {
+              list-style: decimal;
+              color: #7f7d7d;
+              margin-bottom: 15px;
+			  float:none;
+              &,a,& a:hover{
+                color:#7f7d7d;
+              }
+            }
+          }
+        }
+        &.blank {
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+
+/*新闻列表 e*/
+

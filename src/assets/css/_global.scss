@@ -1,0 +1,62 @@
+@import "variable";
+@import "media/global";
+@import "css3animate";
+@import "mixin";
+body {
+  text-align: center;
+  font-family: "宋体", arial;
+  margin: 0;
+  padding: 0;
+  background: #FFF;
+  font-size: 12px;
+  color: #000;
+  //overflow-x:hidden;
+}
+
+div, form, img, ul, ol, li, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: normal;
+}
+a{outline:none;blr:expression(this.onFocus=this.blur());}
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #bc2931;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #bc2931;
+}
+
+.clear{
+  clear: both;
+}
+
+.hide{
+  display:none;
+}

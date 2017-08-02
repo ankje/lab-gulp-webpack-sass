@@ -1,0 +1,30 @@
+@media screen {
+  @media (orientation: landscape) {//横屏
+    @media (max-width:1100px) {
+
+    }
+  }
+  @media (orientation:portrait) {//竖屏
+  }
+}
+
+//小于1100px
+@media screen and (max-width:1100px){
+
+}
+//小于640px
+@media screen and (max-width:640px){
+
+}
+//小于480px
+@media screen and (max-width:480px){
+
+}
+//小于320px
+@media screen and (max-width:320px){
+
+}
+//大于320px
+@media screen and (min-width:320px){
+
+}

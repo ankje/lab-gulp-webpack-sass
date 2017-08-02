@@ -1,0 +1,14 @@
+/*底部s*/
+.footer-bg{
+  border-top:#2aa5ea 2px solid;
+  background:#2e2e2e;
+  padding:20px;
+  .footer {
+    width: $contWidth;
+    margin: auto;
+    p{
+      color: #fff;
+    }
+  }
+}
+/*底部e*/

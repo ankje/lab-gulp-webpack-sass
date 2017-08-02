@@ -1,0 +1,8 @@
+一、gulp-rev-collector
+    1.反转rev映射也可以替换
+        位置：\node_modules\gulp-rev-collector\index.js:31
+        注释：|| path.basename(json[key]).replace(new RegExp( opts.revSuffix ), '' ) !==  path.basename(key)
+    2.css的背景图地址只有()括起来时，地址也可以替换
+        位置：\node_modules\gulp-rev-collector\index.js:105
+        把：regexp: new RegExp( '([\/\\\\\'"])' + pattern, 'g' ),
+        修改为：regexp: new RegExp( '([\(\/\\\\\'"])' + pattern, 'g' ),

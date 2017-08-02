@@ -1,0 +1,339 @@
+@import "global";
+@import "banner";
+//@import "scrollvnav";
+
+
+@import "header";
+@import "footer";
+
+//视频与公告
+.video-info-box-wrap{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  z-index: 999999;
+}
+.video-info-box{
+  z-index: 9999;
+  width:1252px;
+  margin:auto;
+  height:240px;
+  overflow: hidden;
+  .videos{
+    width:602px;
+    height: 100%;
+    float:left;
+    position: relative;
+    .sections{
+      position: relative;
+      .section{
+        background:#32404b;
+        position: absolute;
+        left:0;
+        .left,.video{
+          @include inline-block;
+        }
+        .left{
+          width:171px;
+          float: left;
+          font-family: "microsoft yahei";
+          font-size: 32px;
+          font-weight:bold;
+          color:white;
+          .number{
+            font-size: 60px;
+            font-family: inherit;
+            margin:15px 0 0 0;
+          }
+          .title{
+            margin:0;
+          }
+          .line{
+            @include line(133px,dotted,1px,#ccc,block);
+            margin: 5px auto;
+          }
+        }
+        .video{
+          width:431px;
+          img{
+            width:100%;
+          }
+        }
+      }
+    }
+    .pages{
+      position: absolute;
+      width:171px;
+      bottom: 0;
+      left: 0;
+    }
+    .pages li{
+      @include inline-block;
+      list-style-type: none;
+      width: 15px;
+      height: 15px;
+      background:url(../images/banner-ico2.png) no-repeat 0 0;
+      margin:40px 10px;
+      cursor: pointer;
+      &.active{
+        background-position-y: -15px;
+      }
+    }
+  }
+  .gonggao{
+    width:650px;
+    height:100%;
+    float:left;
+    background:white;
+    .title{
+      position: relative;
+      margin: 0;
+      height: 63px;
+      font-size: 38px;
+      font-family: microsoft yahei;
+      font-weight: bold;
+      text-align: left;
+      text-indent: 28px;
+      background:url(../images/gonggao-title-bg.jpg) no-repeat right top;
+      .line{
+        @include line(591px,#ccc,1px,solid,block);
+        margin:5px auto;
+      }
+      a{
+        width:50px;
+        height: 50px;
+        display: block;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+    }
+    .marquee-wrap{
+      height: 180px;
+      overflow:hidden;
+      .content{
+        li{
+          padding-left: 33px;
+          padding-right: 39px;
+          line-height: 28px;
+          text-align: left;
+          .icon{
+            width:18px;
+            height:18px;
+            display: block;
+            margin-top: 7px;
+            margin-right: 10px;
+            float: left;
+            background:url(../images/jiao-w.jpg) no-repeat 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "inc_vnav";
+.vnav {
+  display:block;
+}
+/*坚向导航 e*/
+
+@mixin title(){
+  .title-head {
+    position: relative;
+    padding-top: 30px;
+    .line {
+      position: absolute;
+      height: 0;
+      border-top: #ececec 1px solid;
+      width:$contWidth/2-118px;
+      top:50%;
+      &.l{
+        left:0;
+      }
+      &.r{
+        right:0;
+      }
+    }
+    .text {
+      text-align: center;
+      width: 180px;
+      margin:auto;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/*游戏列表 s*/
+.game-list {
+  width: $contWidth;
+  margin: 50px auto;
+  @include title();
+  .content{
+    margin-top:180px;
+    *margin-top:0px;
+    *padding-top:180px;
+    ul{
+      li{
+        float: left;
+        &.item{
+          width:$contWidth/3-100px;
+          padding:50px 33px 30px 33px;
+          background: #f9fafc;
+          border:#ececec 1px solid;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          .title{
+            font-family: microsoft yahei,"宋体",arial;
+            font-size: 39px;
+            font-weight:bold;
+            margin-top: 15px;
+            margin-bottom: 15px;
+          }
+          .logo{
+            width:196px;
+            margin:-150px auto auto auto;
+            img{
+              width:100%;
+            }
+          }
+          .desc{
+            height: 110px;
+            color:#7f7d7d;
+            overflow: hidden;
+            line-height:18px;
+            text-align: left;
+          }
+        }
+        &.blank{
+          width:45px;
+        }
+        .btn{
+          padding:16px 36px;
+          background: #ffb400;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          display: block;
+          width: 80px;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+/*游戏列表 e*/
+
+
+/*活动列表 s*/
+.activity-bg{
+  background: #eff4f7;
+  .activity-list {
+    width: $contWidth;
+    margin: 80px auto;
+    @include title();
+    .content{
+      padding-bottom: 2px;
+      margin-top:50px;
+      ul{
+        li{
+          &.item{
+            height: 180px;
+            overflow: hidden;
+            margin-bottom: 13px;
+            .title{
+              text-align: left;
+              padding-left:20px;
+              overflow: hidden;
+              font-family: microsoft yahei,"宋体",arial;
+              font-weight:bold;
+              font-size:18px;
+              &,a,a:hover{
+                color:#7f7d7d;
+              }
+            }
+            .thumb{
+              float: left;
+              width: $contWidth/2;
+              img{
+                width:100%;
+              }
+            }
+            .desc{
+              text-align: left;
+              padding-left:20px;
+              height: 155px;
+              color:#999;
+              overflow: hidden;
+              color:#7f7d7d;
+              line-height: 23px;
+              font-size: 13px;
+            }
+          }
+          &.blank{
+            width:45px;
+          }
+        }
+      }
+    }
+  }
+}
+/*活动列表 e*/
+
+
+/*新闻列表 s*/
+$newsListItemWidth:$contWidth/4-10px;
+.news-list {
+  width: $contWidth;
+  margin: 50px auto;
+  text-align: left;
+  @include title();
+  .content{
+    width:($newsListItemWidth*4+10*3)px;
+    margin:80px auto auto auto;
+    ul{
+      li{
+        float: left;
+        &.item{
+          width:$newsListItemWidth;
+          .thumb{
+            width:$newsListItemWidth;
+            img{
+              width:100%;
+            }
+          }
+          .con{
+            padding:5px;
+            ul{
+              margin-left:18px;
+            }
+            .cat{
+              font-family: microsoft yahei,"宋体",arial;
+              font-size: 18px;
+              font-weight:bold;
+              margin-top: 15px;
+              margin-bottom: 15px;
+              color: #7f7d7d;
+            }
+            .title{
+              list-style: decimal;
+              margin-bottom:15px;
+			  float:none;			  
+			  &,a,& a:hover{
+				color:#7f7d7d;			  
+			  }
+            }
+          }
+        }
+        &.blank{
+          width:10px;
+        }
+      }
+    }
+  }
+}
+/*新闻列表 e*/

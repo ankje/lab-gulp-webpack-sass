@@ -1,0 +1,55 @@
+/*头部s*/
+.header {
+  @include fadeInDown();
+  width: $contWidth;
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+  .logo {
+    width: 130px;
+    float: left;
+    padding-top: 10px;
+    img {
+      width: 100%;
+    }
+  }
+  .nav {
+    position: absolute;
+    right: 0;
+    ul {
+      float: right;
+      li {
+        position: relative;
+        float: left;
+        span{
+          display:block;
+          height: 3px;
+          *height:5px;
+          height:5px\0;
+          background:#2aa5ea;
+          width:0;
+          position: absolute;
+          left:0;
+        }
+        a {
+          padding: 25px 0 8px 0;
+          width: 100px;
+          display: block;
+          font-size: 16px;
+          color:#656768;
+          font-family: "microsoft yahei";
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        &.on{
+          span{
+            width:100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*头部e*/

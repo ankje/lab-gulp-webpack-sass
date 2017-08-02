@@ -1,0 +1,57 @@
+$lte7:true !default;//是否兼容ie6,7
+
+// inline-block
+// ie6-7 *display: inline;*zoom:1;
+@mixin inline-block {
+  display: inline-block;
+  @if $lte7 {
+    *display: inline;*zoom:1;
+  }
+}
+
+@mixin float($float:left) {
+  float: $float;
+  @if $lte7 {
+    display: inline;
+  }
+}
+
+// 禁用样式，加!important
+@mixin disabled($bgColor:#e6e6e6,$textColor:#ababab){
+  background-color: $bgColor !important;
+  color: $textColor !important;
+  cursor: not-allowed !important;
+}
+
+@mixin box-shadow($shadow...){
+  -webkit-box-shadow:$shadow;
+  -moz-box-shadow:$shadow;
+  box-shadow:$shadow;
+}
+
+@mixin center($width){
+  width:$width;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+@mixin line($width:100%,$color:#000,$height:1px,$style:solid,$display:inline-block){
+  height: 0;
+  line-height:0;
+  width:$width;
+  border-top:$color $height $style;
+  @if $display==inline-block {
+    @include inline-block;
+  }@else{
+    display:$display;
+  }
+  /*height: $height;
+  line-height:$height;
+  width:$width;
+  background:$color;
+  @if $display==inline-block {
+    @include inline-block;
+  }@else{
+    display:$display;
+  }*/
+}

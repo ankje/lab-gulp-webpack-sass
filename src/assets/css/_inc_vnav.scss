@@ -1,0 +1,48 @@
+/*竖向导航 s*/
+.vnav {
+  display:none;
+  @include bounceInRight();
+  z-index: 9999999;
+  position: fixed;
+  top: 150px;
+  right: 5.6%;
+  .wrap {
+    position: relative;
+    ul {
+      z-index: 999;
+      position: absolute;
+      li {
+        display: block;
+        width: 78px;
+        margin-bottom: 42px;
+        a {
+          font-size: 13px;
+          color: #000;
+          .icon {
+            display: block;
+            float: left;
+            width: 15px;
+            height: 15px;
+            background:url(../images/vnav-ico.png) no-repeat 0 0;
+          }
+          &:hover {
+            font-size: 13px;
+            color: #000;
+            text-decoration: none;
+          }
+        }
+        &.current span{
+          background-position-y: -15px;
+        }
+      }
+    }
+    .vline {
+      position: absolute;
+      width: 2px;
+      height: 176px;
+      background: #ffebb8;
+      top:3px;
+      left: 6.5px;
+    }
+  }
+}
